@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Terminal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div id="terminal">
+  <div id="status">
+    <span>USER: YOU</span>
+    <span>CPU <div class="meter"><div id="cpuBar"></div></div> <b id="cpuText">0%</b></span>
+    <span>RAM <div class="meter"><div id="ramBar"></div></div> <b id="ramText">0GB</b></span>
+    <span>NET <div class="meter"><div id="netBar"></div></div> SECURE</span>
+  </div>
+
+  <div id="system">
+    <span class="glitch" data-text="SYSTEM: SECURE">SYSTEM: SECURE</span>
+    <span class="glitch" data-text="DATA STREAM MONITOR">DATA STREAM MONITOR</span>
+  </div>
+
+  <div id="output"></div>
+
+  <div id="input-line">
+    <span>&gt;</span>
+    <input id="input" autofocus autocomplete="off"/>
+    <span class="cursor">█</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
 
