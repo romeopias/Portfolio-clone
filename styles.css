@@ -15,6 +15,15 @@ header.hero {
   position:relative;
   z-index:1;
 }
+.terminal-btn {
+  padding: 12px 20px;
+  background: black;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  font-family: monospace;
+  text-decoration: none;
+}
+
 
 .secret-img {
   position:relative; display:inline-block;
