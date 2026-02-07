@@ -1,107 +1,82 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
   background: black;
-  color: #00ff9c;
-  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Courier New", monospace;
+  color: #00ff99;
   overflow: hidden;
 }
 
-body.light {
-  background: #f2f2f2;
-  color: #111;
-}
-
-#matrix {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
-
-#terminal {
+.terminal {
+  width: 750px;
+  height: 420px;
+  background: #020202;
+  border: 2px solid #00ff99;
+  box-shadow: 0 0 25px #00ff99;
+  padding: 15px;
   position: relative;
-  z-index: 2;
-  width: 90%;
-  max-width: 900px;
-  height: 560px;
-  margin: 40px auto;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
-  box-shadow: 0 0 60px #00ff9c;
-  display: flex;
-  flex-direction: column;
 }
 
-body.light #terminal {
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 0 30px #999;
-}
-
-#header {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid #003f2d;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.green { background: #00ff9c; }
-.yellow { background: #ffd700; }
-.red { background: #ff5555; }
-
-#output {
-  flex: 1;
-  padding: 12px;
+.screen {
+  height: 340px;
   overflow-y: auto;
-  white-space: pre-wrap;
 }
 
-#output div {
-  animation: fade 0.2s ease;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(2px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-#input-line {
+.input-line {
   display: flex;
-  padding: 10px;
-  border-top: 1px solid #003f2d;
+  border-top: 1px solid #00ff99;
+  padding-top: 8px;
 }
 
 .prompt {
-  margin-right: 6px;
+  margin-right: 8px;
 }
 
-#input {
+input {
   background: transparent;
   border: none;
   outline: none;
-  color: inherit;
+  color: #00ff99;
+  width: 100%;
+  font-size: 16px;
   font-family: inherit;
-  font-size: 1rem;
-  flex: 1;
-  caret-color: #00ff9c;
 }
 
-/* WORLD MAP */
-#mapContainer {
-  display: none;
+/* Scanline animation */
+.scanline {
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  z-index: 5;
-}
-#map {
+  top: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 153, 0.15) 50%,
+    transparent 100%
+  );
+  animation: scan 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  from { top: -100%; }
+  to { top: 100%; }
+}
+
+/* Flicker */
+.terminal {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+  100% { opacity: 0.97; }
 }
