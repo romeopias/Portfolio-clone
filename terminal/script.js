@@ -6,7 +6,7 @@ const bootLines = [
   "Bypassing firewall...",
   "Decrypting data stream...",
   "Access granted.",
-  "Welcome, JAHID_HASSAN",
+  "Welcome, SI PIAS",
   "Type 'help' to begin."
 ];
 
