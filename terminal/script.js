@@ -18,7 +18,7 @@ const commands = {
     "clear   - clear terminal"
   ],
   about: [
-    "Name: Jahid Hassan",
+    "Name: SI PIAS",
     "Role: Web Developer",
     "Status: ONLINE"
   ],
