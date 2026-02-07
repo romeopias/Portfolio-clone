@@ -1,39 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Terminal</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Pias Terminal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<canvas id="matrix"></canvas>
-
-<div id="terminal">
-
-  <div id="header">
-    <span>root@portfolio</span>
-    <span class="dot green"></span>
-    <span class="dot yellow"></span>
-    <span class="dot red"></span>
+  <div class="terminal">
+    <div class="screen" id="screen"></div>
+    <div class="input-line">
+      <span class="prompt">></span>
+      <input type="text" id="input" autocomplete="off" autofocus />
+    </div>
   </div>
 
-  <div id="mapContainer">
-    <canvas id="map"></canvas>
-  </div>
+  <div class="scanline"></div>
 
-  <div id="output"></div>
-
-  <div id="input-line">
-    <span class="prompt">root@portfolio:~$</span>
-    <input id="input" autocomplete="off" autofocus>
-  </div>
-
-</div>
-
-<audio id="typeSound" src="https://assets.mixkit.co/sfx/preview/mixkit-typewriter-soft-1121.mp3"></audio>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
